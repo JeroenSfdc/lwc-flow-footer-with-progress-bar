@@ -1,0 +1,21 @@
+/* On mobile it footer will scroll with the content */
+.mobile.lwc-flow-footer {
+    bottom: unset;
+    position: absolute;
+}
+
+/* this will ensure the footer is not pushed down to the bottom of the page in LEX */
+.lwc-flow-footer {
+    position: fixed;
+    width: 100%;
+    left: 0px;
+    bottom: 0;
+}
+
+/*
+    This will make sure the footer is not docked to the bottom of the page when in debug mode
+    But... it does not work in LWC since the LWC is scoped
+*/
+.flowruntimeDebug .lwc-flow-footer {
+    position: unset;
+}
