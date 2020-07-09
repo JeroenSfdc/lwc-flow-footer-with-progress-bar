@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>47.0</apiVersion>
+    <description>Footer component for Flows, including optional progress indication (using Flow Stages).</description>
+    <isExposed>true</isExposed>
+    <masterLabel>Flow Footer Lwc</masterLabel>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="flowType" type="String" description="Input: Flow exposes as Flow Action (flowAction) or inside Record page (flexiPage)?" default="flowAction" datasource="flowAction,flexiPage"/>
+            <property name="showNext" type="Boolean" description="Input: Show Next button?" default="false"/>
+            <property name="showPrevious" type="Boolean" description="Input: Show Previous button?" default="false"/>
+            <property name="labelNext" type="String" description="Input: Label for Next button." default="Next"/>
+            <property name="labelPrevious" type="String" description="Input: Label for Previous button." default="Previous"/>
+            <property name="variantPrevious" type="String" description="Can be base, neutral, brand, brand-outline, destructive, destructive-text, inverse or success" datasource="base,neutral,brand,brand-outline,destructive,destructive-text,inverse,success" default="neutral"/>
+            <property name="variantNext" type="String" description="Can be base, neutral, brand, brand-outline, destructive, destructive-text, inverse or success" datasource="base,neutral,brand,brand-outline,destructive,destructive-text,inverse,success" default="brand"/>
+            <property name="stages" type="String[]" description="Input: List of Flow stages."/>
+            <property name="currentStage" type="String" description="Input: List of Flow stages."/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

@@ -1,0 +1,23 @@
+<template>
+    <footer class={_footerClass}>
+        <lightning-layout class="actionButtonBar slds-grid_align-spread slds-grid_vertical-align-center" multiple-rows="true">
+            <lightning-layout-item size="12" small-device-size="12" large-device-size="8">
+                <template if:true={_showStages}>
+                    <lightning-progress-indicator current-step={currentStage} type="base" variant="base">
+                        <template for:each={stages} for:item="stage">
+                            <lightning-progress-step key={stage} label={stage} value={stage}></lightning-progress-step>
+                        </template>
+                    </lightning-progress-indicator>
+                </template>
+            </lightning-layout-item>
+            <lightning-layout-item class="right-align" size="12" small-device-size="12" large-device-size="4">
+                <template if:true={showPrevious}>
+                    <lightning-button variant={variantPrevious} label={labelPrevious} onclick={handleBack} disabled={_isBackDisabled} class="slds-m-left_x-small"></lightning-button>
+                </template>
+                <template if:true={showNext}>
+                    <lightning-button variant={variantNext} label={labelNext} onclick={handleNext} disabled={_isNextDisabled} class="slds-m-left_x-small"></lightning-button>
+                </template>
+            </lightning-layout-item>
+        </lightning-layout>
+    </footer>
+</template>
